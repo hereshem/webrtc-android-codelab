@@ -25,13 +25,13 @@ var sdpConstraints = {
 /////////////////////////////////////////////
 
 // Could prompt for room name:
-var room = prompt('Enter room name:');
+var room = ''; //prompt('Enter room name:');
 
 if (room === '') {
-  room = 'vivek17';
+  room = 'hem';
 }
 
-var socket = io.connect("http://192.168.43.139:1794");
+var socket = io.connect("https://vsock.hem.xyz.np");
 socket.emit('create or join', room);
 console.log('Attempted to create or join room', room);
 
@@ -127,13 +127,13 @@ var constraints = {
 
 console.log('Getting user media with constraints', constraints);
 
-if (location.hostname !== 'localhost') {
-  requestTurn(
+//if (location.hostname !== 'localhost') {
+//  requestTurn(
 //    'https://computeengineondemand.appspot.com/turn?username=41784574&key=4080218913'
-    'https://service.xirsys.com/ice?ident=vivekchanddru&secret=ad6ce53a-e6b5-11e6-9685-937ad99985b9&domain=www.vivekc.xyz&application=default&room=testing&secure=1'
-  
-);
-}
+//    'https://service.xirsys.com/ice?ident=vivekchanddru&secret=ad6ce53a-e6b5-11e6-9685-937ad99985b9&domain=www.vivekc.xyz&application=default&room=testing&secure=1'
+//
+//);
+//}
 
 function maybeStart() {
   console.log('>>>>>>> maybeStart() ', isStarted, localStream, isChannelReady);
